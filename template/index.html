@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>BPM Calculator</title>
+  <style>
+    .wrapper {
+      text-align: center;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 5px 15px;
+      font-size: 12px;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      outline: none;
+      color: #fff;
+      background-color: #4c8baf;
+      border: none;
+      border-radius: 5px;
+      box-shadow: 0 4px #999;
+    }
+
+    .button:hover {
+      background-color: #3e8e41
+    }
+
+    .button:active {
+      background-color: #3e8e41;
+      box-shadow: 0 3px #666;
+      transform: translateY(2px);
+    }
+
+    .center {
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+    }
+  </style>
+
+</head>
+<body>
+  <p style="text-align:center">Webcam:</p>
+  <canvas id="myCanvas" class="center" style="display: none;"></canvas>
+  <video autoplay="true" id="video1" class="center" width="350"></video>
+
+<!-- <p style="text-align:center">Canvas (This will draws the current frame of the video every 20 millisecond):</p> -->
+  <!-- <canvas id="bbCanvas" class="center" style="position: absolute;top:0px"></canvas> -->
+
+<div class="wrapper">
+  <p>Your BPM will be shown below: </p>
+  
+  <p id="ShowText"></p>
+</div>
+
+<p>
+  <div class="wrapper">
+    <button class="button" type="button" id="check" onclick="getBpm()"> Get BPM </button>
+  </div>
+</p>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='index.js') }}"></script>
+</body>
+</html>
